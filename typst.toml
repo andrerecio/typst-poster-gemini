@@ -1,0 +1,17 @@
+# Package manifest — only needed if/when you publish the template on
+# Typst Universe (https://github.com/typst/packages). Until then it is
+# harmless; `typst compile` ignores it.
+[package]
+name = "gemini-poster"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Andrea Recine"]
+license = "MIT"
+description = "Academic poster template in the style of the Gemini beamerposter theme"
+repository = "https://github.com/andrerecio/typst-poster-gemini"
+keywords = ["poster", "academic", "conference", "gemini"]
+categories = ["poster"]
+exclude = ["preview/*", "fonts/*", ".github/*", "local/*", "logos/*"]
+
+# When publishing on Universe, add a [template] section pointing to a
+# template/ folder that contains a minimal poster.typ (see README).
