@@ -167,9 +167,41 @@ workflow artifact, so a broken build is caught before the printer does.
 - [ ] Three-column landscape example (A0)
 - [ ] Optional Quarto wrapper (`quarto-ext` format) for executable chunks
 
+## Related projects
+
+This is not the only Gemini-flavoured poster template for Typst:
+
+- **[pollux](https://github.com/taka255/pollux)** (Kaito Takanami, MIT) — a clean A0 poster
+  template also inspired by Gemini, built on top of peace-of-posters, with first-class
+  Japanese/English bilingual typesetting. On Typst Universe: `typst init @preview/pollux:0.1.0`.
+- **[peace-of-posters](https://typst.app/universe/package/peace-of-posters/)** (Jonas Pleyer,
+  MIT) — the general-purpose Typst poster package pollux builds on. Not a Gemini port, but the
+  most flexible box/layout toolkit of the three.
+- Also on Typst Universe: [`postercise`](https://typst.app/universe/package/postercise/),
+  [`simple-research-poster`](https://typst.app/universe/package/simple-research-poster/),
+  [`typst-poster`](https://github.com/pncnmnp/typst-poster).
+
+This template and pollux share a lineage but sit at different design points (as of August 2026):
+
+| | `typst-poster-gemini` | `pollux` |
+|---|---|---|
+| Shape | template library — `#show: poster.with(...)` | project scaffold (`typst init`) with editable `style/` files |
+| Fonts | vendored in `fonts/`, nothing to install (`--font-path fonts`) | Lato / Raleway / Noto Sans CJK JP installed system-wide |
+| Paper | any Typst paper size or custom `width`/`height`, N columns | A0, two columns |
+| Blocks | Gemini's `block` / `exampleblock` / `alertblock` trio | `column-box` |
+| Themes | 4 named dictionaries, per-key override, `navy` fallback | 6 colour themes (heading / fill / stroke) |
+| Extras | `figure-box`, `arrows-list`, `accent`, `\nobibliography`-style refs | Japanese/English bilingual support |
+
+pollux is the one to reach for if you want a package-manager install or CJK text; this one if
+you want the Gemini block vocabulary, arbitrary poster sizes, and a repo that compiles the same
+on any machine without installing fonts.
+
 ## Credits and licence
 
 MIT, see [LICENSE](LICENSE). The design is a port of
 [Gemini](https://github.com/anishathalye/gemini) by Anish Athalye and of the
 [gemini-cam](https://github.com/andiac/gemini-cam) fork. Fonts are © their respective authors
 under the OFL 1.1.
+
+[pollux](https://github.com/taka255/pollux) is an independent Typst template inspired by the
+same theme — see [Related projects](#related-projects).
