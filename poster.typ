@@ -100,6 +100,50 @@
   ]
 ]
 
+#alert-block[Results][
+  #figure-box(
+    demo-bars(),
+    caption: [*Placeholder bar chart*, drawn directly in Typst. In a real
+      poster, pass `image("figs/your-figure.png", width: 100%)` to
+      `figure-box` instead],
+  )
+  #v(0.5em)
+  #figure-box(
+    width: 90%,
+    demo-scatter(),
+    caption: [*Placeholder scatter plot* with a fitted line. The `width`
+      parameter of `figure-box` controls the size relative to the column],
+  )
+  #v(0.5em)
+  #arrows-list[
+    *Alert blocks* like this one are traditionally reserved for the headline
+    results --- the part of the poster a passer-by should read first
+  ][
+    Figures sit in `figure-box`, which centres the content and typesets the
+    caption in small type underneath
+  ]
+]
+
+#plain-block[Sub-structure Inside Blocks][
+  Longer sections can be organised with headings (`= Like This`), set in the
+  same heavy Montserrat as the block titles:
+
+  = Data
+  Describe the sample, sources, and any preprocessing here --- placeholder
+  text standing in for a real methods paragraph.
+
+  = Estimation
+  Pair a heading with a formula or a short list when a whole block would be
+  too much:
+  $ hat(beta) = (X' X)^(-1) X' y $
+]
+
+#colbreak()
+
+// ============================================================
+// RIGHT COLUMN
+// ============================================================
+
 #plain-block[Using the Template][
   - Wrap your document in `#show: poster.with(...)` and set `title`,
     `authors`, `institute`, `footer`, and optionally `logo-left`/`logo-right`
@@ -134,48 +178,6 @@
   ```typst
   theme: themes.navy + (primary: rgb("#B31B1B"))
   ```
-]
-
-#plain-block[References][
-  #set text(size: 0.7em)
-  #set par(leading: 0.5em, spacing: 0.7em, justify: false)
-  #cite-full(<turing1950>) \
-  #cite-full(<shannon1948>) \
-  #cite-full(<knuth1984>) \
-  #cite-full(<lovelace1843>)
-
-  #v(0.4em)
-  #text(size: 1.25em)[*Contact:* #link("mailto:ada.lovelace@example.edu")[ada.lovelace\@example.edu]]
-]
-
-#colbreak()
-
-// ============================================================
-// RIGHT COLUMN
-// ============================================================
-
-#alert-block[Results][
-  #figure-box(
-    demo-bars(),
-    caption: [*Placeholder bar chart*, drawn directly in Typst. In a real
-      poster, pass `image("figs/your-figure.png", width: 100%)` to
-      `figure-box` instead],
-  )
-  #v(0.5em)
-  #figure-box(
-    width: 90%,
-    demo-scatter(),
-    caption: [*Placeholder scatter plot* with a fitted line. The `width`
-      parameter of `figure-box` controls the size relative to the column],
-  )
-  #v(0.5em)
-  #arrows-list[
-    *Alert blocks* like this one are traditionally reserved for the headline
-    results --- the part of the poster a passer-by should read first
-  ][
-    Figures sit in `figure-box`, which centres the content and typesets the
-    caption in small type underneath
-  ]
 ]
 
 #plain-block[A Second Plain Block][
@@ -215,4 +217,16 @@
     Fonts are vendored in `fonts/`, so the poster builds identically on any
     machine and in CI
   ]
+]
+
+#plain-block[References][
+  #set text(size: 0.7em)
+  #set par(leading: 0.5em, spacing: 0.7em, justify: false)
+  #cite-full(<turing1950>) \
+  #cite-full(<shannon1948>) \
+  #cite-full(<knuth1984>) \
+  #cite-full(<lovelace1843>)
+
+  #v(0.4em)
+  #text(size: 1.25em)[*Contact:* #link("mailto:ada.lovelace@example.edu")[ada.lovelace\@example.edu]]
 ]
